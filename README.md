@@ -20,24 +20,24 @@ Next, set up the corresponding `Post` model. Make sure the class inherits from `
 
 Now that we have the database and model set up, it's time to set up the ability to create a blog post.
 
-First, create a route in your controller, `get '/posts/new'`, that renders the `new.erb` view. 
+First, create a route in your controller, `get '/posts/new'`, that renders the `new.erb` view.
 
-We need to create an erb file in the views directory, `new.erb`, with a form that POSTs to a controller action, `/posts`. The controller action should use the Create CRUD action to create the blog post and save it to the database. Then, the action uses `erb` to render the index view page. 
+We need to create an erb file in the views directory, `new.erb`, with a form that POSTs to a controller action, `/posts`. The controller action should use the Create CRUD action to create the blog post and save it to the database. Then, the action uses `erb` to render the index view page.
 
 ### Read
 
-The Read CRUD action corresponds to two different controller actions: show and index. The show action should render the erb view `show.erb`, which shows an individual post. The index action should render the erb view `index.erb`, which shows a list of *all* of the posts. 
+The Read CRUD action corresponds to two different controller actions: show and index. The show action should render the erb view `show.erb`, which shows an individual post. The index action should render the erb view `index.erb`, which shows a list of *all* of the posts.
 
-Create the `get '/posts'` controller action. This action should use Active Record to grab *all* of the posts and store them in an instance variable, `@posts`. Then, it should render the `index.erb` view. That view should use erb to iterate over `@posts` and render them on the page. 
+Create the `get '/posts'` controller action. This action should use Active Record to grab *all* of the posts and store them in an instance variable, `@posts`. Then, it should render the `index.erb` view. That view should use erb to iterate over `@posts` and render them on the page.
 
-Create the `get '/posts/:id'` controller action. This action should use Active Record to grab the post with the `id` that is in the params and set it equal to `@post`. Then, it should render the `show.erb` view page. That view should use erb to render the `@post`'s title and content. 
+Create the `get '/posts/:id'` controller action. This action should use Active Record to grab the post with the `id` that is in the params and set it equal to `@post`. Then, it should render the `show.erb` view page. That view should use erb to render the `@post`'s title and content.
 
 
 ### Update
 
-The Update CRUD action corresponds to the edit controller action and view. 
+The Update CRUD action corresponds to the edit controller action and view.
 
-Create a controller action, `get '/posts/:id/edit'`, that renders the view, `edit.erb`. This view should contain a form to update a specific blog post and POSTs to a controller action, `patch '/posts/:id'`. 
+Create a controller action, `get '/posts/:id/edit'`, that renders the view, `edit.erb`. This view should contain a form to update a specific blog post and POSTs to a controller action, `patch '/posts/:id'`.
 
 You'll need to make sure the edit form includes:
 
